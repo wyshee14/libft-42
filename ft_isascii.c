@@ -6,14 +6,14 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:29:56 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/07 15:21:57 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/08 12:44:25 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

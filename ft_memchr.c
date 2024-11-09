@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 10:30:06 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/08 12:44:35 by wshee            ###   ########.fr       */
+/*   Created: 2024/11/09 17:22:05 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/09 17:43:45 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_isprint(int c)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 32 && c <= 127)
-		return (1);
-	else
-		return (0);
+	const unsigned char *str = (unsigned char*)s;
+	size_t i;
+
+	i = 0;
+	if (str == (NULL))
+		return (NULL);
+	while (i < n)
+	{
+		if (str[i] == (unsigned char)c)
+			return ((unsigned char*)(str + i));
+		i++;
+	}
+	return (NULL);
 }
 
-int	main(void)
+int main (void)
 {
-	char	c;
-
-	c = 'A';
-	printf("%d\n", ft_isprint(c));
+	char str[20] = "Hello 42";
+	char *result = ft_memchr(str, 'o', 10);
+	printf("Result: %s\n", result);
 }

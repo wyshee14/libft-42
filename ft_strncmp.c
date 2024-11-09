@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 10:30:06 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/08 12:44:35 by wshee            ###   ########.fr       */
+/*   Created: 2024/11/08 16:39:20 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/09 17:20:53 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_isprint(int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 32 && c <= 127)
-		return (1);
-	else
-		return (0);
+	size_t i;
+
+	i = 0;
+	while (i < n && s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }
 
-int	main(void)
+int main (void)
 {
-	char	c;
+	char str1[20] = "Hello 42";
+	char str2[20] = "Hello 24";
+	char str3[20] = "Hello 42";
 
-	c = 'A';
-	printf("%d\n", ft_isprint(c));
+	int result  = ft_strncmp(str1, str2, 10);
+	printf("Result: %d\n", result);
 }

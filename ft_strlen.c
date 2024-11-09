@@ -6,14 +6,14 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:30:25 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/07 15:46:54 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/08 16:15:57 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	counter;
 
@@ -25,8 +25,8 @@ int	ft_strlen(char *s)
 	return (counter);
 }
 
-int	main(void)
-{
-	char	*s = "abcdefg";
-	printf("%d\n", ft_strlen(s));
-}
+// //int	main(void)
+// {
+// 	char	*s = "abcdefg";
+// 	printf("%zu\n", ft_strlen(s));
+// }

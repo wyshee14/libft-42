@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 10:30:06 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/08 12:44:35 by wshee            ###   ########.fr       */
+/*   Created: 2024/11/08 14:24:25 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/08 14:28:49 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_isprint(int c)
+int ft_tolower (int c)
 {
-	if (c >= 32 && c <= 127)
-		return (1);
-	else
-		return (0);
+	if (c >= 'a' && c <= 'z')
+		c += 32;
+	return (c);
 }
 
-int	main(void)
+int main (void)
 {
-	char	c;
-
-	c = 'A';
-	printf("%d\n", ft_isprint(c));
+	char *str = "ABCDEF";
+	int i = 0;
+	int n = 0;
+	while (str[n] != '\0')
+		n++;
+	while (i < n)
+	{
+		char c = str[i];
+		c = ft_tolower(c);
+		printf("%c", c);
+		i++;
+	}
+	printf("\n");
 }
