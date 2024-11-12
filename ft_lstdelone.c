@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 11:28:56 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/12 11:29:53 by wshee            ###   ########.fr       */
+/*   Created: 2024/11/12 12:42:47 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/12 13:00:47 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
 
-int ft_lstsize(t_list *lst)
+void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-
+	if (!lst || !del) //check for null pointer and del function
+		return;
+	del(lst->content); //delete the content in the list
+	free(lst); // delete a node
 }
