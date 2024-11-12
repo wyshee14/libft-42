@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 20:55:45 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/10 12:22:34 by wshee            ###   ########.fr       */
+/*   Created: 2024/11/10 10:53:02 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/10 12:34:50 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+char *ft_strdup(const char *s)
 {
-	void *ptr;
+	int i;
+	int len;
+	char *dup;
 
-	ptr = (void *)malloc (nmemb * size);
-	if (array == NULL)
-		return (NULL);
-	ft_bzero(array, nmemb * size);
-	return (array);
+	i = 0;
+	len = ft_strlen(s);
+	dup = (char *)malloc((len + 1) * sizeof(char));
+	while (i < len)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+int main(void)
+{
+	char str[] = "Hello";
+	char *dup = ft_strdup(str);
+	printf("%s\n", dup);
 }

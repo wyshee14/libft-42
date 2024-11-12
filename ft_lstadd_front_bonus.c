@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 20:55:45 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/10 12:22:34 by wshee            ###   ########.fr       */
+/*   Created: 2024/11/11 19:10:27 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/12 11:28:42 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	void *ptr;
-
-	ptr = (void *)malloc (nmemb * size);
-	if (array == NULL)
-		return (NULL);
-	ft_bzero(array, nmemb * size);
-	return (array);
+	if (lst && new) //check if node is not null
+	{
+		new->next = *lst;
+		*lst = new; //dereference lst to new
+	}
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/10 13:56:40 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/10 13:56:42 by wshee            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
@@ -31,11 +43,11 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 	return (src_len(src));
 }
 
-int main (void)
-{
-	char str1[] = "Hello World";
-	char str2[100];
-	ft_strlcpy(str2, str1, sizeof(str1));
-	printf("%s\n", str2);
-	return (0);
-}
+// int main (void)
+// {
+// 	char str1[] = "Hello World";
+// 	char str2[100];
+// 	ft_strlcpy(str2, str1, sizeof(str1));
+// 	printf("%s\n", str2);
+// 	return (0);
+// }
