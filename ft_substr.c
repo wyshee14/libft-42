@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:39:02 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/10 13:44:47 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 16:10:46 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-int main (void)
-{
-	char *s = "Hello World";
-	char *res = ft_substr(s, 0, 5);
-	printf("%s\n", res);
-	free(res);
-}
+// int main (void)
+// {
+// 	char *s = "Hello World";
+// 	char *res = ft_substr(s, 0, 5);
+// 	printf("%s\n", res);
+// 	free(res);
+// }

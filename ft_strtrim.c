@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:11:15 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/10 17:02:04 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 16:10:57 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ char *ft_strtrim(char const *s1, char const *set)
 	return (trim);
 }
 
-int main (void)
-{
-	char *s1 = "ttesg";
-	char *set = "t";
-	char *res = ft_strtrim(s1, set);
-	printf("%s\n", res);
-	free(res);
-}
+// int main (void)
+// {
+// 	char *s1 = "ttesg";
+// 	char *set = "t";
+// 	char *res = ft_strtrim(s1, set);
+// 	printf("%s\n", res);
+// 	free(res);
+// }

@@ -6,29 +6,34 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:23:08 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/09 21:54:19 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 17:17:21 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int x, unsigned int n)
+void	*ft_memset(void *s, int c, unsigned int n)
 {
-	unsigned char	*p;
+	unsigned char	*ptr;
+	int				i;
 
-	p = (unsigned char *)s;
-	while (n--)
+	ptr = (unsigned char *)s;
+	i = 0;
+	while (n > 0)
 	{
-		*p++ = (unsigned char)x;
+		ptr[i] = (unsigned char)c;
+		n--;
+		i++;
 	}
-	return (s);
+	return (ptr);
 }
 
-#include <stdio.h>
-int main()
-{
-	char s[] = "Hello my name is Bello.";
-	ft_memset((s + 17), 'X', 5);
-	printf("%s\n", s);
-}
-
+//fills first n bytes of memory area pointed to s with c
+//return
+// #include <stdio.h>
+// int main()
+// {
+// 	char s[] = "Hello my name is Bello.";
+// 	ft_memset((s + 17), 'X', 5);
+// 	printf("%s\n", s);
+// }

@@ -5,106 +5,106 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 17:04:23 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/10 21:03:53 by wshee            ###   ########.fr       */
+/*   Created: 2024/11/13 14:29:16 by wshee             #+#    #+#             */
+/*   Updated: 2024/11/13 21:44:50 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-static char **free_array(char **ptr, int i)
+static int	count_words(char const *s, char c)
 {
-	while (i > 0)
-	{
-		i--;
-		free(ptr[i]);
-	}
-	free(ptr);
-	return(0);
-}
-
-static int ft_count_words(char const *s, char c)
-{
-	int i;
-	int count;
+	int	counter;
+	int	i;
+	int	in_word;
 
 	i = 0;
-	count = 0;
+	counter = 0;
+	in_word = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-			i++;
-		else
+		if (s[i] != c && in_word == 0)
 		{
-			count++;
-			while (s[i] != '\0' && s[i] != c)
-				i++;
+			counter++;
+			in_word = 1;
 		}
+		if (s[i] == c)
+			in_word = 0;
+		i++;
 	}
-	return (count);
+	return (counter);
 }
 
-char *ft_putword(char *word, char const *s, int i, int word_len)
+static char	**free_array(char **split_str, int word_index)
 {
-	int j;
+	while (word_index > 0)
+	{
+		word_index--;
+		free(split_str[word_index]);
+	}
+	free(split_str);
+	return (NULL);
+}
+
+static char	*put_words(char *word, char const *s, int i, int word_len, int word_index)
+{
+	int	j;
 
 	j = 0;
+	word = (char *) malloc(sizeof(char) * (word_len + 1));
+	if (word == NULL)
+	{
+		free_array(&word, word_index);
+		return (NULL);
+	}
 	while (word_len > 0)
 	{
 		word[j] = s[i - word_len];
 		j++;
 		word_len--;
 	}
-	word[j] = '\0';
+	word[j] = 0;
 	return (word);
 }
 
-static char **ft_split_words(char const *s, char c, char **split_str, int num_words)
+static char	**ft_word(char const *s, char c, int num_words, char **split_str)
 {
-	int i;
-	int word;
-	int word_len;
+	int	i;
+	int	word_index;
+	int	word_len;
 
 	i = 0;
-	word = 0;
+	word_index = 0;
 	word_len = 0;
-	while (word < num_words)
+	while (word_index < num_words)
 	{
-		while (s[i] != '\0' && s[i] == c)
+		while (s[i] == c && s[i] != '\0')
 			i++;
-		while (s[i] != '\0' && s[i] != c)
+		while (s[i] != c && s[i] != '\0')
 		{
-			i++;
 			word_len++;
+			i++;
 		}
-		split_str[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (split_str[word] == (NULL))
-		{
-			free_array(split_str, word);
-			return (NULL);
-		}
-		ft_putword(split_str[word], s, i, word_len);
+		split_str[word_index] = put_words(split_str[word_index], s, i, word_len, word_index);
 		word_len = 0;
-		word++;
+		word_index++;
 	}
-	split_str[word] = 0;
+	split_str[word_index] = 0;
 	return (split_str);
 }
 
 char **ft_split(char const *s, char c)
 {
-	char **split_str;
-	unsigned int num_words;
+	int 	num_words;
+	char 	**split_str;
 
-	if (s == (NULL))
+	if (s == NULL)
 		return (NULL);
-	num_words = ft_count_words(s, c);
-	split_str = (char **)malloc(sizeof(char *) * (num_words + 1));
-	if (split_str == (NULL))
+	num_words = count_words(s, c);
+	split_str = (char**)malloc(sizeof(char*) * (num_words + 1));
+	if (split_str == NULL)
 		return (NULL);
-	split_str = ft_split_words(s, c, split_str, num_words);
+	split_str = ft_word(s, c, num_words, split_str);
 	return (split_str);
 }
 
@@ -112,14 +112,14 @@ int main(void)
 {
 	char *str = "Welcome to 42KL";
 	char c = ' ';
-	char **result = ft_split(str, c);
+	char **res = ft_split(str, ' ');
+	int num_words = count_words(str, c);
 	int i = 0;
-	int word_count = ft_count_words(str, c);
-	while (i < word_count)
+	while (i < num_words)
 	{
-		printf("%s\n", result[i]);
-		free(result[i]);
+		printf("Word[%d]: %s\n", i, res[i]);
+		free(res[i]);
 		i++;
 	}
-	free(result);
+	free(res);
 }

@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 17:58:50 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/09 18:32:08 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/12 17:14:07 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int ft_isspace(int c)
+static int	ft_isspace(int c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' || c == ' ')
+	if ((c >= 9 && c == 13) || c == 32)
 		return (1);
 	return (0);
 }
 
 int	ft_atoi(const char *nptr)
 {
-	int i = 0;
-	int sign = 1;
-	int result = 0;
+	int	i;
+	int	sign;
+	int	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
 	while (ft_isspace(nptr[i]))
 		i++;
 	while (nptr[i] == '-' || nptr[i] == '+')
@@ -36,7 +40,7 @@ int	ft_atoi(const char *nptr)
 	}
 	while (ft_isdigit (nptr[i]))
 	{
-		result = result *10;
+		result = result * 10;
 		result = result + nptr[i] - '0';
 		i++;
 	}
@@ -44,9 +48,9 @@ int	ft_atoi(const char *nptr)
 	return (result);
 }
 
-int main(void)
-{
-	char str[] = "     -23456";
-	int res = ft_atoi(str);
-	printf("%d\n", res);
-}
+// int main(void)
+// {
+// 	char str[] = "     -23456";
+// 	int res = ft_atoi(str);
+// 	printf("%d\n", res);
+// }

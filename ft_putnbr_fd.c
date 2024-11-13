@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:40:56 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/11 17:00:18 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 14:21:29 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ void ft_putnbr_fd(int n, int fd)
 	}
 }
 
-int main(void)
-{
-	ft_putnbr_fd(123, 1);
-	write(1, "\n", 1);
-	ft_putnbr_fd(-2147483648, 1);
-	write(1, "\n", 1);
-	ft_putnbr_fd(-123, 1);
-	write(1, "\n", 1);
-	ft_putnbr_fd(0, 1);
-	write(1, "\n", 1);
-}
+// int main(void)
+// {
+// 	ft_putnbr_fd(123, 1);
+// 	write(1, "\n", 1);
+// 	ft_putnbr_fd(-2147483648, 1);
+// 	write(1, "\n", 1);
+// 	ft_putnbr_fd(-123, 1);
+// 	write(1, "\n", 1);
+// 	ft_putnbr_fd(0, 1);
+// 	write(1, "\n", 1);
+// }

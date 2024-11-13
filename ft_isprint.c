@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:30:06 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/08 12:44:35 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/12 17:16:24 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_isprint(int c)
 		return (0);
 }
 
-int	main(void)
-{
-	char	c;
+// int	main(void)
+// {
+// 	char	c;
 
-	c = 'A';
-	printf("%d\n", ft_isprint(c));
-}
+// 	c = 'A';
+// 	printf("%d\n", ft_isprint(c));
+// }

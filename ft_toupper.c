@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:33:27 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/08 14:22:04 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 16:10:22 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ int ft_toupper (int c)
 	return (c);
 }
 
-int main (void)
-{
-	char *str = "abcd";
-	int i = 0;
-	int n = 0;
-	while (str[n] != '\0')
-		n++;
-	while (i < n)
-	{
-		char c = str[i];
-		c = ft_toupper(c);
-		printf("%c", c);
-		i++;
-	}
-	printf("\n");
-}
+// int main (void)
+// {
+// 	char *str = "abcd";
+// 	int i = 0;
+// 	int n = 0;
+// 	while (str[n] != '\0')
+// 		n++;
+// 	while (i < n)
+// 	{
+// 		char c = str[i];
+// 		c = ft_toupper(c);
+// 		printf("%c", c);
+// 		i++;
+// 	}
+// 	printf("\n");
+// }

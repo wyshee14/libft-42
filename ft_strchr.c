@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:30:09 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/08 16:36:38 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 15:15:14 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char *ft_strchr(const char *s, int c)
 			return ((char*)(s + i));
 		i++;
 	}
-	if (s[i] == (char)c) //Check for null terminator
+	if (s[i] == (char)c) //Check if c is null terminator
 		return ((char*)(s + i)); // Return pointer to null terminator
 	return (NULL);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:38:33 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/12 15:50:49 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 13:52:34 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void(*del)(void *))
 		if (f)
 			new_node = lstnew(f(lst->content));
 		else
-			new_node = lstnew(lst->content);
+			return (NULL);
 		if (new_node == NULL)
 		{
 			lstclear(&new_list, del);

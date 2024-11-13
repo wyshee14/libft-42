@@ -6,20 +6,44 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:55:45 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/10 12:22:34 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/13 13:51:22 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *ptr;
+	void	*ptr;
 
-	ptr = (void *)malloc (nmemb * size);
-	if (array == NULL)
+	if (nmemb == 0 || size == 0)
+	{
+		ptr = malloc(0);
+		if (!ptr)
+			return (NULL);
+		return (ptr);
+	}
+	if (nmemb > (size_t)-1 / size)
 		return (NULL);
-	ft_bzero(array, nmemb * size);
-	return (array);
+	ptr = (void *)malloc (nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
+
+// int main(void)
+// {
+// 	char *ptr;
+// 	ptr = ft_calloc(0, 0);
+// 	if (ptr == NULL)
+// 	{
+// 		printf("Failed! %zu\n", (size_t)-1);
+// 	}
+// 	else
+// 	{
+// 		printf("Successful\n");
+// 		free(ptr);
+// 	}
+// }
