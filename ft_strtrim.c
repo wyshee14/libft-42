@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:11:15 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/13 16:10:57 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/14 13:10:52 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <stdio.h>
 //#include <string.h>
 
-static int ft_isinset(const char *set, char c)
+static int	ft_isinset(const char *set, char c)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (set[i] != '\0')
@@ -29,12 +29,26 @@ static int ft_isinset(const char *set, char c)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+static char	*ft_putstring(size_t start, size_t end, char *trim, char const *s1)
 {
-	char *trim;
-	size_t start;
-	size_t end;
-	size_t i;
+	int	i;
+
+	i = 0;
+	while (start < end)
+	{
+		trim[i] = s1[start];
+		i++;
+		start++;
+	}
+	trim [i] = '\0';
+	return (trim);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*trim;
+	size_t	start;
+	size_t	end;
 
 	if (s1 == (NULL) || set == (NULL))
 		return (NULL);
@@ -48,14 +62,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	trim = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (trim == (NULL))
 		return (NULL);
-	i = 0;
-	while (start < end)
-	{
-		trim[i] = s1[start];
-		i++;
-		start++;
-	}
-	trim [i] = '\0';
+	ft_putstring(start, end, trim, s1);
 	printf("Trimmed string: %s\n", trim);
 	return (trim);
 }
