@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:32:39 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/18 14:33:43 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/18 19:07:24 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = n;
+	if (n == -2147483648)
+		ft_strdup("-2147483648");
 	if (n == 0)
 	{
 		result = (char *)malloc(2);
@@ -71,6 +73,8 @@ char	*ft_itoa(int n)
 }
 
 // assign n to (long) to handle negative min int, prevent overflow
+// int can store 32-bits can store values between -2147483648 and 2147483647
+// long int can store 64 bits
 // int main(void)
 // {
 // 	int n = 0;

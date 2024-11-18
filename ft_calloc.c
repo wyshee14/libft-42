@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:55:45 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/18 14:32:15 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/18 16:55:08 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,22 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 
+//nmemb = number of elements in array
+//size = size of each element in bytes
+//if nmemb or size = 0, it returns a valid ptr that can be safely freed
+//line26 cehck for overflow(size_t - 1) max number - 1
+//size_t-1 bytes is maximum value of size_t
 // int main(void)
 // {
 // 	char *ptr;
 // 	ptr = ft_calloc(0, 0);
-// 	if (ptr == NULL)
-// 	{
-// 		printf("Failed! %zu\n", (size_t)-1);
-// 	}
-// 	else
-// 	{
-// 		printf("Successful\n");
-// 		free(ptr);
-// 	}
+// 	// if (ptr == NULL)
+// 	// {
+// 	// 	printf("Failed! %zu\n", (size_t)-1);
+// 	// }
+// 	// else
+// 	// {
+// 	// 	printf("Successful\n");
+// 	// 	free(ptr);
+// 	// }
 // }
