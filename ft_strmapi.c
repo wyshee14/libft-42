@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:26:36 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 12:52:08 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/17 14:14:51 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
-char	f(unsigned int i, char c)
-{
-	char	ch;
+// char	f(unsigned int i, char c)
+// {
+// 	char	ch;
 
-	ch = c - 32;
-	return (ch);
-}
+// 	ch = c - 32;
+// 	return (ch);
+// }
 
 // int main(void)
 // {

@@ -6,14 +6,11 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:11:15 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 13:10:52 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/17 18:31:28 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-//#include <string.h>
 
 static int	ft_isinset(const char *set, char c)
 {
@@ -58,20 +55,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && ft_isinset(set, s1[end - 1]) == 1)
 		end--;
-	printf("Original string: %s == %lu\n", s1, end - start);
 	trim = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (trim == (NULL))
 		return (NULL);
 	ft_putstring(start, end, trim, s1);
-	printf("Trimmed string: %s\n", trim);
 	return (trim);
 }
 
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
 // int main (void)
 // {
-// 	char *s1 = "ttesg";
-// 	char *set = "t";
-// 	char *res = ft_strtrim(s1, set);
-// 	printf("%s\n", res);
+// 	char *s1 = "lorem \n ipsum \t dolor \n sit \t amet";
+
+// 	printf("Original string: %s\n", s1);
+// 	char *res = ft_strtrim(s1, " ");
+// 	printf("Trimmed string: %s\n", res);
 // 	free(res);
 // }

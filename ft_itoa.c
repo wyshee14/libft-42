@@ -6,12 +6,11 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:32:39 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/13 13:53:25 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/18 14:33:43 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	digit_count(int n)
 {

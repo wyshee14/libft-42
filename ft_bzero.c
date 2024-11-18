@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:29:16 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/12 17:14:40 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/17 11:26:52 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, unsigned int n)
 {
 	unsigned char	*p;
-	int	i;
+	int				i;
 
 	p = (unsigned char *)s;
 	i = 0;

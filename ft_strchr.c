@@ -6,12 +6,11 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:30:09 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 11:33:06 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/18 14:35:46 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {

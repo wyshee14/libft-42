@@ -6,27 +6,35 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 19:10:27 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 20:06:07 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/18 14:33:56 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst && new) //check if node is not null
+	if (lst != NULL && new != NULL)
 	{
 		new->next = *lst;
-		*lst = new; //dereference lst to new as the fist element
+		*lst = new;
 	}
 }
 
-int main(void)
-{
-	t_list *head = NULL;
-	t_list *new_node = ft_lstnew(content);
-	ft_lstadd_front(&head, new_node);
-	while (head != NULL)
-	printf("Linked list adding node to front: %s ->")
-}
+//**lst double pointer holds the address of pointer pointing to the list */
+//line21 dereference lst to new as the fist element
+// int main(void)
+// {
+// 	t_list *ptr = NULL;
+// 	t_list *node1 = ft_lstnew("Node1");
+// 	t_list *node2 = ft_lstnew("Node2");
+// 	ft_lstadd_front(&ptr, node1);
+// 	ft_lstadd_front(&ptr, node2);
+// 	while(ptr)
+// 	{
+// 		printf("%s -> ", (char *)ptr -> content);
+// 		ptr = ptr-> next;
+// 	}
+// 	free(node2);
+// 	free(node1);
+// }

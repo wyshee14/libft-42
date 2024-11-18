@@ -6,12 +6,11 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:56:40 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 12:50:09 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/18 14:36:20 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	src_len(const char *src)
 {

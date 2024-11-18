@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:24:25 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 13:12:19 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/17 13:42:42 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_tolower(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 'A' && c <= 'Z')
 		c += 32;
 	return (c);
 }
@@ -24,14 +24,11 @@ int	ft_tolower(int c)
 // {
 // 	char *str = "ABCDEF";
 // 	int i = 0;
-// 	int n = 0;
-// 	while (str[n] != '\0')
-// 		n++;
-// 	while (i < n)
+// 	int size = sizeof(str);
+// 	while (i < size && str[i] != '\0')
 // 	{
-// 		char c = str[i];
-// 		c = ft_tolower(c);
-// 		printf("%c", c);
+// 		char res = ft_tolower(str[i]);
+// 		printf("%c", res);
 // 		i++;
 // 	}
 // 	printf("\n");

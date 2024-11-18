@@ -6,11 +6,10 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:26:56 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 11:40:00 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/17 14:56:24 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
