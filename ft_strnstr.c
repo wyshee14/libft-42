@@ -6,13 +6,11 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:32:52 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/14 12:54:00 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/19 14:04:18 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -40,6 +38,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
+//The function finds the small string inside a big string
+// Return pointer to the first occurence of little in the string
+//line23 if little is not found in big the big string is returned
 // int main(void)
 // {
 // 	char str1[] = "Hello World";

@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:32:39 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/18 19:07:24 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/25 18:29:31 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ static int	digit_count(int n)
 	return (counter);
 }
 
-static void	put_digit(char *result, long nb, int size)
+static void	put_digit(char *result, int n, int size)
 {
-	if (nb < 0)
+	if (n < 0)
 	{
 		result[0] = '-';
-		nb = -nb;
+		n = -n;
 	}
-	while (nb != 0)
+	while (n != 0)
 	{
-		result[size] = (nb % 10) + '0';
-		nb = nb / 10;
+		result[size] = (n % 10) + '0';
+		n = n / 10;
 		size--;
 	}
 }
@@ -49,11 +49,9 @@ char	*ft_itoa(int n)
 {
 	int		size;
 	char	*result;
-	long	nb;
 
-	nb = n;
 	if (n == -2147483648)
-		ft_strdup("-2147483648");
+		return (ft_strdup("-2147483648"));
 	if (n == 0)
 	{
 		result = (char *)malloc(2);
@@ -63,12 +61,12 @@ char	*ft_itoa(int n)
 		result[1] = '\0';
 		return (result);
 	}
-	size = digit_count(nb);
+	size = digit_count(n);
 	result = (char *)malloc(sizeof(char) * (size + 1));
 	if (result == (NULL))
 		return (NULL);
 	result[size] = '\0';
-	put_digit(result, nb, size - 1);
+	put_digit(result, n, size - 1);
 	return (result);
 }
 

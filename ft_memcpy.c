@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:30:11 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/18 13:24:46 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/18 20:51:41 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t numBytes)
 	return (dest);
 }
 
+// #include <string.h>
 // int main()
 // {
 //     char str1[] = "";
 //     char str2[] = "World";
 //     printf("Before memcpy: %s\n", str1);
-//     ft_memcpy(str1, str2, sizeof(str2));
+//     memcpy(NULL, NULL, 0);
 //     printf("After memcpy: %s\n", str1);
 // }

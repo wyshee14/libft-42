@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:39:02 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/17 15:28:18 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/19 21:04:03 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
+// start from the index with len
 //  int main (void)
 //  {
 //  	char *s = "Hello World";

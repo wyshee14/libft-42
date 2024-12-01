@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:23:08 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/13 17:17:21 by wshee            ###   ########.fr       */
+/*   Updated: 2024/11/25 18:11:39 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memset(void *s, int c, unsigned int n)
 }
 
 //fills first n bytes of memory area pointed to s with c
-//return
+//return a pointer to the memory area s
 // #include <stdio.h>
 // int main()
 // {

@@ -6,7 +6,7 @@
 /*   By: wshee <wshee@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:40:56 by wshee             #+#    #+#             */
-/*   Updated: 2024/11/17 19:15:08 by wshee            ###   ########.fr       */
+/*   Updated: 2024/12/01 16:55:04 by wshee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
+// handle integer overflow,
+//if we convert -2147483648 to positive will cause integer overflow
+// hence manually printout the first two character
 // int main(void)
 // {
 // 	ft_putnbr_fd(123, 2);
